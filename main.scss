@@ -1,0 +1,495 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  background-color: black;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+.app-wrapper {
+  .movie-info {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, #000000 100%),
+      url(Full.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .navbar {
+    padding: 38px 93px 0 93px;
+    &-container {
+      // width: 1347px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        cursor: pointer;
+      }
+    }
+    // padding: 38px 93px;
+    &-browse {
+      margin-right: auto;
+      display: flex;
+
+      margin-top: 6px;
+      align-items: center;
+      color: #ffffff;
+      letter-spacing: -0.42px;
+      margin-left: 26px;
+
+      &-container {
+        position: relative;
+        .top {
+          display: flex;
+          align-items: center;
+        }
+        a {
+          text-decoration: none;
+          color: white;
+
+          &:hover {
+            color: rgba(255, 255, 255, 0.7);
+          }
+        }
+        .navbar-browse-list {
+          position: absolute;
+          background: black;
+          top: 24px;
+          width: 100%;
+          transition: all 0.4s ease;
+          display: none;
+
+          &-item {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            &:last-of-type {
+              border-bottom: none;
+            }
+          }
+          &.open {
+            display: block;
+          }
+        }
+      }
+      img {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .featured-movie {
+    display: flex;
+    padding: 0 54px;
+    align-items: flex-start;
+    &-details {
+      // padding-right: 500px;
+      // width: 587px;
+      margin-top: 29px;
+      .featured-movie-badge {
+        text-transform: uppercase;
+        color: #ffffff;
+        opacity: 0.7;
+        font-size: 18px;
+        margin-bottom: 21px;
+        letter-spacing: -0.353571px;
+      }
+
+      .featured-movie-title {
+        font-size: 72px;
+        letter-spacing: -1.68px;
+        margin-bottom: 38px;
+        color: white;
+      }
+
+      .featured-movie-desc {
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        margin-bottom: 26px;
+        &-item {
+          opacity: 0.66;
+          margin-right: 51px;
+          font-size: 13px;
+          &.match-percent {
+            color: #ffd028;
+            opacity: 1;
+          }
+          &:nth-of-type(2) {
+            margin-right: 30px;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    &-summary {
+      font-size: 13px;
+      opacity: 0.5;
+      color: #ffffff;
+      width: 553px;
+      line-height: 22px;
+      margin-bottom: 32px;
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      .watch-btn {
+        background: white;
+        color: black;
+        width: 87px;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      .add-list-btn {
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        opacity: 0.6;
+
+        background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.1)
+          ),
+          rgba(255, 255, 255, 0.2);
+        background-blend-mode: normal, overlay;
+        margin-left: 16px;
+
+        img {
+          margin-right: 11px;
+        }
+
+        &:hover {
+          background-color: rgba(109, 109, 110, 0.4);
+        }
+      }
+    }
+
+    &-previews {
+      display: flex;
+      align-items: center;
+      img {
+        width: 185px;
+        cursor: pointer;
+        height: 104px;
+        object-fit: cover;
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .featured-movies {
+    padding: 0 93px;
+    margin-bottom: 93px;
+
+    &-title {
+      color: white;
+      font-size: 36px;
+      letter-spacing: -0.84px;
+      margin-bottom: 33px;
+      margin-top: -10px;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      overflow-y: hidden;
+
+      &-item {
+        margin-right: 30px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 4px 0;
+        a {
+          text-decoration: none;
+        }
+        img {
+          width: 352px;
+          height: 216px;
+          cursor: pointer;
+        }
+        p {
+          color: white;
+          font-size: 28px;
+          margin-top: 16px;
+          margin-bottom: 12px;
+          cursor: pointer;
+          &:hover {
+            color: rgba(255, 255, 255, 0.6);
+          }
+        }
+      }
+    }
+  }
+}
+
+.button {
+  background: none;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+// @media only screen and (max-width: 1921px) {
+//   .featured-movies-list {
+//     width: calc(1921px - 120px) !important;
+//     overflow-x: hidden !important;
+//   }
+// }
+
+// @media only screen and (max-width: 1025px) {
+//   .featured-movies-list {
+//     width: calc(1024px - 120px) !important;
+//   }
+// }
+
+@mixin media-769px {
+  .featured-movie {
+    flex-direction: column;
+    padding: 0 93px !important;
+    margin-bottom: 64px;
+    margin-top: 24px;
+    .featured-movie-poster {
+      display: none;
+    }
+  }
+  .featured-movies-list {
+    width: calc(768px - 93px) !important;
+  }
+}
+
+@mixin media-426px {
+  .navbar {
+    padding: 12px !important;
+    z-index: 2;
+    // box-shadow: rgba(109, 109, 110, 0.4);
+    &-logo {
+      width: 140px;
+      object-fit: cover;
+    }
+
+    &-browse {
+      margin-left: 13px !important;
+      margin-top: 2px !important;
+    }
+  }
+  .featured-movie {
+    flex-direction: column;
+    padding: 0 24px !important;
+    margin-bottom: 64px;
+    margin-top: 24px;
+    &-poster {
+      display: none;
+    }
+
+    &-summary {
+      width: 350px !important;
+    }
+    &-previews {
+      flex-direction: column;
+      align-items: flex-start !important;
+
+      img {
+        margin-bottom: 16px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .featured-movies {
+    padding: 0 24px !important;
+    &-list {
+      width: calc(425px - 93px) !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  @include media-769px();
+}
+
+@media only screen and (max-width: 426px) {
+  @include media-426px();
+}
+
+@media only screen and (max-width: 321px) {
+  @include media-426px();
+  .navbar {
+    display: none;
+  }
+
+  .movie-info {
+    background-size: 900px !important;
+  }
+
+  .featured-movie {
+    margin-top: 0 !important;
+    &-title {
+      font-size: 64px !important;
+    }
+  }
+  .featured-movie-summary {
+    width: 100% !important;
+  }
+  .featured-movies {
+    &-list {
+      width: calc(340px - 93px) !important;
+      &-item {
+        img {
+          width: 240px !important;
+          object-fit: cover;
+          height: 200px !important;
+        }
+      }
+    }
+  }
+}
